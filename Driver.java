@@ -22,18 +22,7 @@ public class Driver {
         boolean menuVal = true;
         boolean startDisplayMenu = true;
 
-        initializeDogList();
-        initializeMonkeyList();
-
-        // Add a loop that displays the menu, accepts the users input
-        // and takes the appropriate action.
-        // For the project submission you must also include input validation
-        // and appropriate feedback to the user.
-        // Hint: create a Scanner and pass it to the necessary
-        // methods
-        // Hint: Menu options 4, 5, and 6 should all connect to the printAnimals()
-        // method.
-
+        // menu loop
         while (startDisplayMenu == true) {
 
             do {
@@ -104,26 +93,6 @@ public class Driver {
         System.out.println("Enter a menu selection");
     }
 
-    // Adds dogs to a list for testing
-    public static void initializeDogList() {
-        Dog dog1 = new Dog("Spot", "German Shepherd", "male", "1", "25.6", "05-12-2019", "United States", "intake",
-                false, "United States");
-        Dog dog2 = new Dog("Rex", "Great Dane", "male", "3", "35.2", "02-03-2020", "United States", "Phase I", false,
-                "United States");
-        Dog dog3 = new Dog("Bella", "Chihuahua", "female", "4", "25.6", "12-12-2019", "Canada", "in service", true,
-                "Canada");
-
-        dogList.add(dog1);
-        dogList.add(dog2);
-        dogList.add(dog3);
-    }
-
-    // Adds monkeys to a list for testing
-    // Optional for testing
-    public static void initializeMonkeyList() {
-
-    }
-
     // Complete the intakeNewDog method
     // The input validation to check that the dog is not already in the list
     // is done for you
@@ -182,10 +151,7 @@ public class Driver {
 
     }
 
-    // Complete intakeNewMonkey
-    // Instantiate and add the new monkey to the appropriate list
-    // For the project submission you must also validate the input
-    // to make sure the monkey doesn't already exist and the species type is allowed
+    // Monkey intake
     public static void intakeNewMonkey(Scanner scanner) {
         // Allowed monkey species
         ArrayList<String> allowedMonkeySpecies = new ArrayList<String>();
@@ -266,8 +232,7 @@ public class Driver {
         monkeyList.add(monkey);
     }
 
-    // Complete reserveAnimal
-    // You will need to find the animal by animal type and in service country
+    // Reserve animal method
     public static void reserveAnimal(Scanner scanner) {
         System.out.println("What is the animal type?");
         String animalType = scanner.nextLine();
@@ -311,20 +276,7 @@ public class Driver {
 
     }
 
-    // Complete printAnimals
-    // Include the animal name, status, acquisition country and if the animal is
-    // reserved.
-    // Remember that this method connects to three different menu items.
-    // The printAnimals() method has three different outputs
-    // based on the listType parameter
-    // dog - prints the list of dogs
-    // monkey - prints the list of monkeys
-    // available - prints a combined list of all animals that are
-    // fully trained ("in service") but not reserved
-    // Remember that you only have to fully implement ONE of these lists.
-    // The other lists can have a print statement saying "This option needs to be
-    // implemented".
-    // To score "exemplary" you must correctly implement the "available" list.
+    // Print animal method
     public static void printAnimals(String input) {
         // Dogs
         if (input == "Dogs") {
